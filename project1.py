@@ -28,6 +28,7 @@ import os
 def main():
     path = '/Users/zippy/desktop/imagestwo'
     for image_path in os.listdir(path):
+        output_path = os.path(future path here)
         input_path = os.path.join(path, image_path)
         img = Image.open(input_path)
         print("Rotating image")
@@ -37,8 +38,8 @@ def main():
         print("Scailing")
         scailing = rotated.resize((128,128))
         print("scailing completed")
-        new_image = scailing.save(input_path + "_newer.png")
+        new_image = scailing.save(output_path + ".png")
         print("\n saving file")
-        img.close
+        new_image.close
 if __name__ == '__main__':
     main()
