@@ -32,6 +32,8 @@ def main():
     path = '/home/student-00-79bb12745b0f/images'
     output_path = '/opt/icons'
     for image_path in os.listdir(path):
+# add a try statment for the flow with an exception error to
+# to handle improper files ?
         input_path = os.path.join(path, image_path)
         img = Image.open(input_path)
         print("Rotating image")
