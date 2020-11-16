@@ -6,19 +6,21 @@ import smtplib
 import mimetypes
 import os.path
 
-def load_smtp()
-    sender = "zachpaulino93@gmail.com"
+def load_smtp():
+    sender = 'some email'
     print("connecting to smtp server will")
-    mail_server = smtplib.SMTP_SSL('smtp.gmail.com')
-    mail_server = getpass.getpass('Password? ')
-    mail_server.login(sender, getpass)
+    mail_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    mail_pass = getpass.getpass('Password? ')
+    print(mail_pass)
+    mail_server.login(sender, mail_pass)
     print("login sucessful")
     return sender
 
-def create_email(sender)
+def create_email(sender):
     # sender = "zachpaulino93@gmail.com"
-    recipient = "mallorie98@gmail.com"
+    recipient = "some email"
     # setting to and from portion
+    message = EmailMessage()
     message["From"] = sender
     message["to"] = recipient
     # setting up subject field
@@ -48,5 +50,8 @@ def create_email(sender)
 
 
 if __name__ == "__main__":
+    print("Starting program, will initiate load_smtp")
     sender = load_smtp()
+    print("gathering email data to complie")
     email = create_email(sender)
+    print("sending email")
